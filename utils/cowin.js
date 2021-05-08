@@ -2,7 +2,7 @@ const request=require('request')
 var i =0
 const cowin=(pincode,date,callback)=>{
  var os = require('os');
-    const url= 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode='+pincode+'&date='+date
+    const url= 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode='+encodeURIComponent(pincode)+'&date='+encodeURIComponent(date)
         request({ url:url,json:true},(error,{body})=>{
 
     if(error){

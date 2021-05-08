@@ -1,12 +1,10 @@
 {
   "name": "n",
   "version": "1.0.0",
-  "engines": {
-    "node": "15.14.0"
-    },
-  "description": "",
+    "description": "",
   "scripts": {
-    "start": "node app.js"    
+    "start": "node app.js",
+    "dev": "nodemon app.js -e js,hbs"
     },
   "author": "",
   "license": "ISC",
