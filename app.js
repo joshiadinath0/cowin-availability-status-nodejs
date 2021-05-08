@@ -2,6 +2,7 @@ const cowin=require('./utils/cowin')
 const path = require('path')
 const express=require('express')
 const hbs=require('hbs')
+var favicon = require('serve-favicon')
 
 const app=express()
 
