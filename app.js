@@ -2,11 +2,11 @@ const cowin=require('./utils/cowin')
 const path = require('path')
 const express=require('express')
 const hbs=require('hbs')
-const { brotliDecompressSync } = require('zlib')
-const port = process.env.PORT || 3000
-
 
 const app=express()
+
+const port = process.env.PORT || 3000
+
 const publicDirectoryPath=path.join(__dirname,'templates/public')
 const viewsPath=path.join(__dirname,'templates/views')
 const partialsPath=path.join(__dirname,'templates/partials')
@@ -46,10 +46,6 @@ app.get('/info', (req, res) => {
     })
 })
 })
-
-
-
-
 
 app.listen(port,()=>{
     console.log('Server is running on port ' + port)
