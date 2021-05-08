@@ -5,7 +5,8 @@ const hbs=require('hbs')
 
 const app=express()
 
-const port = process.env.PORT || 3000
+app.set( 'port', ( process.env.PORT || 5000 ));
+
 
 const publicDirectoryPath=path.join(__dirname,'templates/public')
 const viewsPath=path.join(__dirname,'templates/views')
@@ -47,7 +48,6 @@ app.get('/info', (req, res) => {
 })
 })
 
-app.listen(port,()=>{
-    console.log('Server is running on port ' + port)
-})
-
+app.listen( app.get( 'port' ), function() {
+    console.log( 'Node server is running on port ' + app.get( 'port' ));
+    });
