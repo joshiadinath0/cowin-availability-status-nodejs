@@ -32,7 +32,7 @@ name:'Adinath Joshi'
 })
 
 
-app.get('/info', (req, res) => {
+app.get('*', (req, res) => {
     cowin(req.query.pincode,req.query.date,(error,output)=>{
     if(error){
         return console.log('Error has occured, unable to find pincode')
