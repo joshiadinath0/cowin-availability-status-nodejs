@@ -10,8 +10,6 @@ app.set( 'port', ( process.env.PORT || 5000 ));
 
 const publicDirectoryPath=path.join(__dirname,'templates/public')
 const viewsPath=path.join(__dirname,'templates/views')
-const partialsPath=path.join(__dirname,'templates/partials')
-hbs.registerPartials(partialsPath)
 
 //Setup handlebar engine and views location
 app.set('view engine','hbs')
@@ -32,15 +30,16 @@ name:'Adinath Joshi'
 })
 
 
-app.get('*', (req, res) => {
+app.get('/info', (req, res) => {
     cowin(req.query.pincode,req.query.date,(error,output)=>{
     if(error){
         return console.log('Error has occured, unable to find pincode')
     }
     res.send({
         output:output,
-        date:req.query.date,
-        pincode:req.query.pincode
+        pincode:req.query.pincode,
+        date:req.query.date
+        
     })
 })
 })
