@@ -16,7 +16,7 @@ Form.addEventListener('submit',(e)=>{
 fetch('/info/?pincode='+pincode+'&date='+date).then((response)=>{
     response.json().then((data)=>{
         if(data.error){
-           messageOne.textContent=data.error
+           messageOne.textContent="cannot load"
         }
         else{
            messageOne.textContent=data.output
